@@ -1,0 +1,57 @@
+
+% Set the typeface
+\usepackage[T1]{fontenc}
+% \usepackage{PlayfairDisplay}
+\usepackage{charter}
+
+% Font for the display ("William Goodall" at the top)
+\newcommand{\displayfont}[1]{\fontfamily{cmr}\selectfont}
+
+% Remove the default paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Tiny margins
+\usepackage[hmargin=0.5in,top=0.3in,bottom=0.4in]{geometry}
+
+% Stretchy tables
+\usepackage{array}
+\usepackage{tabularx}
+\newcolumntype{N}{>{\bfseries}l} % "Note" column type
+\newcolumntype{R}{>{\raggedright\arraybackslash}X} % Ragged-right column type
+
+% Ragged right with hyphenation
+\usepackage{ragged2e}
+\AtBeginDocument{\RaggedRight}
+
+% Links (and \www command)
+\usepackage[hyphens,spaces]{url}
+\urlstyle{tt}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\www}[1]{%
+	{\href{https://#1}{{\url{#1}}}}%
+}%
+
+% Format the section headers
+\usepackage[rm]{titlesec}
+\titleformat{\section}
+    {\titlerule\vspace{0.2em}}
+    {}{0em}
+    {\Large}
+\titlespacing{\section}{0pt}{0.5em}{0.2em}
+
+% Compact lists
+\usepackage{enumitem}
+\setlist[itemize]{nosep,label={$-$},left=0pt}
+
+% Aside date formatting
+\newlength{\datecolwidth}
+\setlength{\datecolwidth}{5.5em}
+\newcommand{\dated}[2]{\parbox[t]{\datecolwidth}{#1}\parbox[t]{\dimexpr(\textwidth-\datecolwidth)}{#2}\\}
+
+
+% Thin vertical sep
+\newcommand{\vbeat}{\vspace{0.5em}}
+
+% Consistent hanging indents
+\newcommand{\hung}[1]{{\hangindent=0.7cm #1\par}}

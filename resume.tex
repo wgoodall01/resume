@@ -1,0 +1,143 @@
+\documentclass[letterpaper,10pt]{article}
+\input{setup.tex}
+
+\title{Resume}
+\author{William Goodall}
+\date{November 2021}
+
+\begin{document}
+\pagestyle{empty}
+
+% Top header with name and contact info
+\parbox[b]{20em}{\Huge{}William Goodall}%
+\hfill
+\parbox[b]{12em}{
+	\href{tel:2012470282}{\tt (201) 247-0282}\\
+	\href{mailto:wgoodall01@gmail.com}{\tt wgoodall01@gmail.com}\\
+	\www{github.com/wgoodall01}\\
+	\www{williamgoodall.com}%
+}
+
+\section{Education}
+
+\newcommand{\course}[2]{\mbox{#1 (\textit{#2})}}
+
+\dated{2019-2023\\(est.)}{
+	\textbf{Georgia Institute of Technology}, College of Computing\\
+	Bachelor of Science, major in Computer Science, 3rd-year, GPA 3.81
+	\vbeat
+
+	\hung{
+		Relevant coursework:
+			\course{CS 1332}{Data Structures and Algorithms},
+			\course{CS 2110}{Systems Architecture},
+			\course{CS 3210}{Operating Systems},
+			\course{CS 3220}{Processor Design},
+			\course{CS 3251}{Computer Networking}
+	}
+}
+
+\section{History}
+
+\newcommand{\work}[5]{
+	\dated{#1}{
+		\textbf{#2}\hfill{}#3\\
+		\textit{#4}\par\vbeat
+		#5\par
+	}
+	\vbeat
+}
+
+\work
+{2019-2021}
+{Mesmer Eyes, Inc}
+{Remote}
+{Developer (2019-2021), Intern (2019)}
+{
+	Worked to automate mobile app user experience and accessibility testing. Spearheaded several projects:
+
+	\vbeat
+	Mesmer Gherkin (a compiler for English-language descriptions of app tests)
+
+	\begin{itemize}
+	\item Empowered customers to precisely define app tests, across Android and iOS, in a plain-English domain-specific lanauage
+	\item Worked to unify many of Mesmer's different internal representations of test logic into one common AST
+	\item Collaborated with the Customer Success Team, writing Gherkin code to rapidly solve client problems
+	\item Employed coverage-guided fuzzing and extensive snapshot testing to find new bugs and stop regressions
+	\end{itemize}
+
+	The Mesmer Sidecar (\www{cli.mesmerhq.com/sidecar})
+
+	\begin{itemize}
+	\item Built system to locally audit Android apps for accessibility issues, attaching to target apps at runtime and evaluating a proprietary ruleset against data extracted from Android APIs and in-house heuristics
+	\item Built system to attach to a running Android app, extract accessibility data, and run in-house heuristics
+	\item Created WCAG 2.0 rules engine to find accesssibility issues and explain what's needed to fix them
+	\item Designed marketing materials, website, and pitch video for release on Product Hunt (\#3 App of the Day)
+	\end{itemize}
+
+	The Mesmer CLI (\www{cli.mesmerhq.com})
+
+	\begin{itemize}
+	\item Integrated the Mesmer platform with developer workflows as a part of Mesmer's larger shift-left strategy
+	\item Built integrations with unstable internal APIs, maintaining a stable public command-line interface for client scripts, integrations and automation
+	\item Implemented CI/CD and a comprehensive test suite, auto-importing user error reports into failing tests, and deploying fixes across Mac, Windows, and Linux auto-updaters in 20min
+	\item Provided frontline support, dealing directly with five Fortune 500 clients and many other smaller businesses
+	\end{itemize}
+}
+
+\work
+{2019}
+{Wolfram Research}
+{Waltham, Massachusetts}
+{Student, Wolfram Summer Camp}
+{
+	Researched both traditional and machine learning approaches to algorithmically determine the physical scale of satellite images. Final model achieved $r^2 = 0.73$ using feature extraction and a small dense neural net.
+}
+
+
+\work
+{2017-2018}
+{Transparensee Systems}
+{New York, NY}
+{Intern, Developer}
+{
+	Created a client-facing customization tool for web embeds. This project was deployed to more than 60 local newspapers across the US, allowing non-technical users to integrate real estate platform \www{enclosure.io} and agricultural classifieds site \www{agrisearch.com} with their own properties.
+
+	\begin{itemize}
+	\item Designed and built full-stack web applications (React/Redux frontend, Express.js backend)
+	\item Created an automated CI/CD pipeline to build, test, and deploy the application to Kubernetes
+	\end{itemize}
+}
+
+\section{Skills and Projects}
+
+\begin{tabularx}{\textwidth}
+	{@{}N R}
+Languages & 
+	Rust, Java, C, C++, JavaScript/TypeScript, Go, Python, Wolfram Language, VHDL, Verilog \\
+Frameworks and Tools &
+	Git, CI/CD (Jenkins, GH Actions), Docker, GraphQL, React (+Native), Next.JS, WebAssembly \\
+Platforms &
+	Google Cloud, AWS, Android, Firebase, Kubernetes, Heroku, Wolfram Cloud \\
+\end{tabularx}
+\vbeat
+
+\newcommand{\project}[3]{\hung{\textbf{#1} #2 \textit{#3}}\vbeat}
+
+\project
+{Motor Controller (2021)}
+{FPGA-based closed-loop proportional servo controller. Userd feedback from a quadrature encoder to position an output shaft with sub-degree precision.}
+{Designed in VHDL, coursework for ECE 2031, Digital Design Lab.}
+
+\project
+{Boolean (2020)}
+{Symbolic computer algebra system for rule-based simplification of Boolean expressions. Contains a rudimentary SAT solver.}
+{Written in Rust, compiled to WebAssembly, runs in-browser at \www{boolean.w01.dev}.}
+
+\project
+{Cookie (2019)}
+{Dynamic cookbook. Based on the user's cooking preferences, construct a set of recipes as dependency graphs, simplify them by merging similar steps, and sequence them in parallel as the user cooks the meal.}
+{Android, iOS app implement with React Native and TypeScript. Released to Google Play: \www{bit.ly/2muVZIY}.}
+
+
+\end{document}

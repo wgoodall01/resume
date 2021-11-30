@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  push:
+    tags: ["*"]
+    branches: ["*"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Cache Tectonic
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+
+      - name: Install Tectonic
+        uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install pdftotext
+        run: DEBIAN_FRONTEND=noninteractive sudo apt-get install -y poppler-utils
+
+      - name: Build resume.pdf
+        run: make resume.pdf
+
+      - name: Run checks
+        run: make test
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: resume
+          path: resume.pdf

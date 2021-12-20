@@ -24,8 +24,7 @@
 
 \dated{2019-2023\\(est.)}{
 	\textbf{Georgia Institute of Technology}, College of Computing\\
-	Bachelor of Science, major in Computer Science, 3rd-year, GPA 3.81.
-	\par\vbeat
+	Bachelor of Science, major in Computer Science, 3rd-year, GPA 3.81.\\
 	\hung{
 		Relevant coursework:
 			\course{CS 1332}{Data Structures and Algorithms},
@@ -56,16 +55,21 @@
 	Worked to automate mobile app user experience and accessibility testing. Spearheaded several projects:
 
 	\vbeat
-	\textbf{Mesmer Gherkin} (a compiler for English-language descriptions of app tests)
+	\textbf{Mesmer Gherkin}:
+	a compiler for English-language descriptions of app tests
+	(\textit{Rust})
 
 	\begin{itemize}
-	\item Empowered customers to precisely define app tests, across Android and iOS, in a plain-English domain-specific language
-	\item Worked to unify many of Mesmer's different internal representations of test logic into one common AST
+	\item Built a compiler for a test description language similar to English, empowering customers to precisely define app tests, across Android and iOS, without technical knowledge
+	\item Unified many of Mesmer's different internal representations of test logic into one common syntax tree
 	\item Collaborated with the Customer Success Team, writing Gherkin code to rapidly solve client problems
 	\item Employed coverage-guided fuzzing and extensive snapshot testing to find new bugs and stop regressions
 	\end{itemize}
 
-	\textbf{The Mesmer Sidecar} (\www{cli.mesmerhq.com/sidecar})
+    \vbeat
+	\textbf{The Mesmer Sidecar}:
+	dynamic test instrumentation for Android apps
+	(\textit{Rust, Android/Java})
 
 	\begin{itemize}
 	\item Built system to locally audit Android apps for accessibility issues, attaching to target apps at runtime and evaluating a proprietary ruleset against data extracted from Android APIs and in-house heuristics
@@ -74,11 +78,14 @@
 	\item Designed marketing materials, website, and pitch video for release on Product Hunt (\#3 App of the Day)
 	\end{itemize}
 
-	\textbf{The Mesmer CLI} (\www{cli.mesmerhq.com})
+    \vbeat
+	\textbf{The Mesmer CLI}: 
+	stable command-line interface to Mesmer tools
+	(\textit{Rust})
 
 	\begin{itemize}
-	\item Integrated the Mesmer platform with developer workflows as a part of Mesmer's larger shift-left strategy
-	\item Built integrations with unstable internal APIs, maintaining a stable public command-line interface for client scripts, integrations and automation
+	\item Created a tool to expose most Mesmer platform functionality to developers working from the command line.
+	\item Handled frequent changes in unstable internal APIs to maintain a stable ``evergreen'' public scripting interface
 	\item Implemented CI/CD and a comprehensive test suite, auto-importing user error reports into failing tests, and deploying fixes across Mac, Windows, and Linux auto-updaters in 20min
 	\item Provided front-line support, dealing directly with five Fortune 500 clients and many other smaller businesses
 	\end{itemize}

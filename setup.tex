@@ -1,8 +1,6 @@
 
 % Set the typeface
 \usepackage[T1]{fontenc}
-% \usepackage{PlayfairDisplay}
-\usepackage{charter}
 
 % Font for the display ("William Goodall" at the top)
 \newcommand{\displayfont}[1]{\fontfamily{cmr}\selectfont}
@@ -20,13 +18,13 @@
 \newcolumntype{N}{>{\bfseries}l} % "Note" column type
 \newcolumntype{R}{>{\raggedright\arraybackslash}X} % Ragged-right column type
 
-% Nuke ligatures
-\usepackage{microtype}
-\DisableLigatures{encoding=*,family=*}
+% Disable ligatures
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures={NoCommon}}
+\setmainfont{XCharter}
 
-% Ragged right with hyphenation
-\usepackage{ragged2e}
-\AtBeginDocument{\RaggedRight}
+% Ragged right with no hyphenation
+\AtBeginDocument{\raggedright}
 
 % Links (and \www command)
 \usepackage[hyphens,spaces]{url}
@@ -51,7 +49,7 @@
 % Aside date formatting
 \newlength{\datecolwidth}
 \setlength{\datecolwidth}{5.5em}
-\newcommand{\dated}[2]{\parbox[t]{\datecolwidth}{#1}\parbox[t]{\dimexpr(\textwidth-\datecolwidth)}{#2}\\}
+\newcommand{\dated}[2]{\parbox[t]{\datecolwidth}{#1}\parbox[t]{\dimexpr(\textwidth-\datecolwidth)}{\raggedright{}#2}\\}
 
 
 % Thin vertical sep

@@ -20,6 +20,10 @@
 \newcolumntype{N}{>{\bfseries}l} % "Note" column type
 \newcolumntype{R}{>{\raggedright\arraybackslash}X} % Ragged-right column type
 
+% Nuke ligatures
+\usepackage{microtype}
+\DisableLigatures{encoding=*,family=*}
+
 % Ragged right with hyphenation
 \usepackage{ragged2e}
 \AtBeginDocument{\RaggedRight}

@@ -1,8 +1,8 @@
 SHELL=bash
 
 # Build the resume
-resume.pdf: $(wildcard *.tex)
-	tectonic resume.tex
+%.pdf: $(wildcard *.tex)
+	tectonic $*.tex
 
 # View the resume in the default PDF viewer.
 .PHONY: view

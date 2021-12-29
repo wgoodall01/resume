@@ -14,6 +14,6 @@ var_dir="$DIR/variants/$name"
 
 mkdir -p "$var_dir"
 
-cp "$DIR"/{resume.tex,setup.tex,Makefile} "$var_dir"
+cp "$DIR"/{resume.tex,coverletter.tex,setup.tex,Makefile} "$var_dir"
 
 echo "Created variant '$name'"

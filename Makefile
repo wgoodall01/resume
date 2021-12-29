@@ -22,7 +22,7 @@ test: scrape.txt
 .PHONY: preflight
 preflight:
 	tectonic --version
-	pdftotext --v # install with 'apt install poppler-utils'
+	pdftotext -v # install with 'apt install poppler-utils'
 
 .PHONY: clean
 clean:
